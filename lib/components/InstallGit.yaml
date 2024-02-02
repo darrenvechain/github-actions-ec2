@@ -1,0 +1,12 @@
+name: InstallGit
+description: Install git on an EC2 image
+schemaVersion: 1.0
+
+phases:
+  - name: build
+    steps:
+      - name: InstallGit
+        action: ExecuteBash
+        inputs:
+          commands:
+            - sudo yum -y update && sudo yum -y install git

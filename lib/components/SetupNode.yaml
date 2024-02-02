@@ -1,0 +1,15 @@
+name: SetupNode
+description: Setup Node
+schemaVersion: 1.0
+
+phases:
+  - name: build
+    steps:
+      - name: SetupNode
+        action: ExecuteBash
+        inputs:
+          commands:
+            - curl -sL https://deb.nodesource.com/setup_20.x -o /tmp/nodesource_setup.sh
+            - sudo bash /tmp/nodesource_setup.sh
+            - sudo apt install -y nodejs
+            - sudo npm install -g yarn
